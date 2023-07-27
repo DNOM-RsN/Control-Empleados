@@ -145,7 +145,7 @@ public class Registros extends javax.swing.JFrame {
     }
 
     private void cargarDatosTabla() {
-        // Obtenemos la lista de empleados desde la clase Datos (suponiendo que tengas una clase llamada Datos)
+        // Obtenemos la lista de empleados desde la clase Datos
         List<Empleados> listaEmpleados = Datos.obtenerListaEmpleados();
 
         // Limpiamos la tabla

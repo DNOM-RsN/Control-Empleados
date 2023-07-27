@@ -209,10 +209,10 @@ public class Eliminar extends javax.swing.JFrame {
 
         for (Empleados empleado : listadatos) {
             if (empleado.getID().equals(idBuscado)) {
-                return empleado; // Se encontró el empleado con el ID buscado
+                return empleado;
             }
         }
-        return null; // No se encontró ningún empleado con el ID buscado
+        return null;
     }
     private void IngresarIDMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_IngresarIDMousePressed
         // TODO add your handling code here:
@@ -232,7 +232,7 @@ public class Eliminar extends javax.swing.JFrame {
         // TODO add your handling code here:
         String idBuscado = IngresarID.getText();
 
-        // Realiza la búsqueda en la lista de empleados (o en tu fuente de datos)
+        // Realiza la búsqueda en la lista de empleados
         Empleados empleadoEncontrado = buscarEmpleadoPorID(idBuscado);
 
         // Si se encontró el empleado, muestra la información en el JTextPane
@@ -258,6 +258,7 @@ public class Eliminar extends javax.swing.JFrame {
         } else {
             // Si no se encontró el empleado, mostrar un mensaje en el JTextPane
             InfoID.setText("Empleado no encontrado.");
+            JOptionPane.showMessageDialog(this, "El empleado no se encuentra en la lista.", "Error", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_BotonBuscarIDMouseClicked
 

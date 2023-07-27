@@ -19,19 +19,10 @@ import javax.swing.JTextField*/
 
 
 public class Menu extends javax.swing.JFrame {
-
-   /* private final JTextField RegistrarNombre;
-    private final JTextField RegistrarEdad;
-    private final JTextField RegistrarDNI;
-    private final JTextField RegistrarTipo;
-    private final JTextField RegistrarFecha;
-    private final JTextField RegistrarSalario;
-    private final JTextField TxtUsuario;
-    private final JPasswordField TxtContra;*/
     /**
      * Creates new form Menu
      */
-   public Menu(/*JTextField RegistrarNombre, JTextField RegistrarEdad, JTextField RegistrarDNI,JTextField RegistrarTipo, JTextField RegistrarSalario, JTextField RegistrarFecha, JTextField TxtUsuario, JPasswordField TxtContra*/){
+   public Menu(){
         initComponents();
         this.setLocationRelativeTo(null);
         setExtendedState(MAXIMIZED_BOTH);
@@ -323,21 +314,11 @@ public class Menu extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(Menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-        /*
-        JTextField registrarNombre = new JTextField();
-        JTextField registrarEdad = new JTextField();
-        JTextField registrarDNI = new JTextField();
-        JTextField registrarTipo = new JTextField();
-        JTextField registrarSalario = new JTextField();
-        JTextField registrarFecha = new JTextField();
-        JTextField txtUsuario = new JTextField();
-        JPasswordField txtContra = new JPasswordField();    
-        */
+        
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                // Pasar los campos de texto y el campo de contraseña al constructor de Menu
-                new Menu(/*registrarNombre, registrarEdad, registrarDNI, registrarTipo, registrarSalario, registrarFecha, txtUsuario, txtContra*/).setVisible(true);
+                new Menu().setVisible(true);
             }
         });
     }

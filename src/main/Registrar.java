@@ -15,8 +15,6 @@ import javax.swing.JOptionPane;
  * @author DELL
  */
 public class Registrar extends javax.swing.JFrame {
-    // Lista para almacenar los datos a guardar
-    //private List<Datos> listaDatos = new ArrayList<>();
     private int contadorRegistros = 0;
     private String cargoSeleccionado = "Seleccionar cargo";
     /**
@@ -551,7 +549,6 @@ public class Registrar extends javax.swing.JFrame {
         String tipo = RegistrarTipo.getText();
         String fecha = RegistrarFecha.getText();
         String salario = RegistrarSalario.getText();
-        // Verificamos si todos los campos están llenos antes de guardar
         if (!nombre.isEmpty() && !edad.isEmpty() && !dni.isEmpty() && !tipo.isEmpty() && !fecha.isEmpty() && !salario.isEmpty()) {
         // Verificar si se ha seleccionado un cargo válido
             if (!cargoSeleccionado.equals("Seleccionar cargo")&& !busquedaCamposPredert()) {
@@ -565,7 +562,7 @@ public class Registrar extends javax.swing.JFrame {
                 mostrarDialogoError();
             }
         } else {
-            // Si algún campo está vacío, muestra un mensaje de error o haz lo que consideres necesario
+            // Si algún campo está vacío, muestra un mensaje de error
             mostrarDialogoError();
         }
     }//GEN-LAST:event_BotonRegistrarMouseClicked
@@ -634,22 +631,16 @@ public class Registrar extends javax.swing.JFrame {
                     break;
                 }
             }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Registrar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Registrar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Registrar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(Registrar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
+        
+        //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Registrar().setVisible(true);
-            }
+        java.awt.EventQueue.invokeLater(() -> {
+            new Registrar().setVisible(true);
         });
     }
 

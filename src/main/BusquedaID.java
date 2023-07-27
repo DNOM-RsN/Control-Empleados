@@ -5,7 +5,6 @@
 package main;
 
 import java.awt.Color;
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -207,7 +206,7 @@ public class BusquedaID extends javax.swing.JFrame {
         // TODO add your handling code here:
         String idBuscado = IngresarID.getText();
 
-        // Realiza la búsqueda en la lista de empleados (o en tu fuente de datos)
+        // Realiza la búsqueda en la lista de empleados
         Empleados empleadoEncontrado = buscarEmpleadoPorID(idBuscado);
 
         // Si se encontró el empleado, muestra la información en el JTextPane
