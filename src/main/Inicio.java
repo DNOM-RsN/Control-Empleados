@@ -14,24 +14,12 @@ public class Inicio extends javax.swing.JFrame {
     int xMouse, yMouse;
     private boolean isLoggedIn = false;
     private Menu menuOpciones;
-    private final JTextField RegistrarNombre;
-    private final JTextField RegistrarEdad;
-    private final JTextField RegistrarDNI;
-    private final JTextField RegistrarTipo;
-    private final JTextField RegistrarFecha;
-    private final JTextField RegistrarSalario;
     public Inicio() {
         initComponents();
-        RegistrarNombre = new javax.swing.JTextField();
-        RegistrarEdad = new javax.swing.JTextField();
-        RegistrarDNI = new javax.swing.JTextField();
-        RegistrarTipo = new javax.swing.JTextField();
-        RegistrarFecha = new javax.swing.JTextField();
-        RegistrarSalario = new javax.swing.JTextField();
+
        // TxtUsuario = new javax.swing.JTextField();
       //  TxtContra = new javax.swing.JPasswordField();
     }
-    // Variable para indicar si el usuario ha iniciado sesión
     
 
     @SuppressWarnings("unchecked")
@@ -261,10 +249,6 @@ public class Inicio extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void BotonIniciarSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonIniciarSActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_BotonIniciarSActionPerformed
-
     private void EncabezadoMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_EncabezadoMousePressed
         xMouse = evt.getX();
         yMouse = evt.getY();
@@ -288,18 +272,21 @@ public class Inicio extends javax.swing.JFrame {
         PanelSalir.setBackground(new Color(51,51,51));
     }//GEN-LAST:event_SalirMouseExited
 
-    private void TxtUsuarioMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TxtUsuarioMousePressed
-        if (TxtUsuario.getText().equals("Ingresar Usuario")){
-            TxtUsuario.setText("");
-            TxtUsuario.setForeground(Color.white);
-            
+    private void BotonIniciarSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonIniciarSActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BotonIniciarSActionPerformed
+
+    private void BotonIniciarSMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonIniciarSMouseClicked
+        javax.swing.JOptionPane.showMessageDialog(this, "Intento de login con los datos: \nUsuario: "+TxtUsuario.getText()+ "\nContraseña: "+String.valueOf(TxtContra.getPassword()), "LOGIN", javax.swing.JOptionPane.INFORMATION_MESSAGE);
+        if (TxtUsuario.getText().equals("admin") && String.valueOf(TxtContra.getPassword()).equals("admin")) {
+            isLoggedIn = true;
+            this.setVisible(false);
+            menuOpciones = new Menu(/*RegistrarNombre, RegistrarEdad, RegistrarDNI, RegistrarTipo, RegistrarSalario, RegistrarFecha, TxtUsuario, TxtContra*/);
+            menuOpciones.setVisible(true);
+            this.dispose();
         }
-       if (String.valueOf(TxtContra.getPassword()).isEmpty()){
-            TxtContra.setText("**********");
-            TxtContra.setForeground(new Color(153,153,153));
-       }
-       
-    }//GEN-LAST:event_TxtUsuarioMousePressed
+
+    }//GEN-LAST:event_BotonIniciarSMouseClicked
 
     private void TxtContraMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TxtContraMousePressed
         if (String.valueOf(TxtContra.getPassword()).equals("**********")){
@@ -312,21 +299,22 @@ public class Inicio extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_TxtContraMousePressed
 
-    private void BotonIniciarSMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonIniciarSMouseClicked
-        javax.swing.JOptionPane.showMessageDialog(this, "Intento de login con los datos: \nUsuario: "+TxtUsuario.getText()+ "\nContraseña: "+String.valueOf(TxtContra.getPassword()), "LOGIN", javax.swing.JOptionPane.INFORMATION_MESSAGE);
-        if (TxtUsuario.getText().equals("admin") && String.valueOf(TxtContra.getPassword()).equals("admin")) {
-            isLoggedIn = true;
-            this.setVisible(false);
-            menuOpciones = new Menu(/*RegistrarNombre, RegistrarEdad, RegistrarDNI, RegistrarTipo, RegistrarSalario, RegistrarFecha, TxtUsuario, TxtContra*/);
-            menuOpciones.setVisible(true);
-            this.dispose();
-        }
-        
-    }//GEN-LAST:event_BotonIniciarSMouseClicked
-
     private void TxtUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtUsuarioActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_TxtUsuarioActionPerformed
+
+    private void TxtUsuarioMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TxtUsuarioMousePressed
+        if (TxtUsuario.getText().equals("Ingresar Usuario")){
+            TxtUsuario.setText("");
+            TxtUsuario.setForeground(Color.white);
+
+        }
+        if (String.valueOf(TxtContra.getPassword()).isEmpty()){
+            TxtContra.setText("**********");
+            TxtContra.setForeground(new Color(153,153,153));
+        }
+
+    }//GEN-LAST:event_TxtUsuarioMousePressed
 
     /**
      * @param args the command line arguments
